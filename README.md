@@ -1,2 +1,2 @@
 # chaoscosmos.online
-chaoscosmos.online website
+chaoscosmos.online website - pure HTML + CSS + JS
