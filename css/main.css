@@ -4,9 +4,10 @@
 	--first-gradient-color: #a5fff6;
 	--second-gradient-color: #ffcc0f;
 	--main-font: "Quicksand", sans-serif;
-	--h-color: red;
+	--h-color: #021a48;
 	--p-color: black;
 }
+
 
 /*
 
@@ -21,7 +22,6 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, button, p, blockquote, pre, a, ab
     padding: 0;
     border: 0;
     /* inherits the browser's font properties: font-size 16px */
-    font: inherit;
 	font-family: var(--main-font), sans-serif;
     /*  specifies the vertical alignment of an inline element */
     vertical-align: baseline;
@@ -29,7 +29,7 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, button, p, blockquote, pre, a, ab
     box-sizing: border-box;
 
     /*  specifies the height of line boxes within the element. */
-    line-height: 1;
+    line-height: 150%;
 
     border-radius: 0;
 
@@ -37,7 +37,6 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, button, p, blockquote, pre, a, ab
     outline: none;
 
     /* inherit the color value of the parent */
-    color: inherit;
 	color: var(--p-color);
 }
 
@@ -82,30 +81,95 @@ svg {
 
 /* Colors */
 
-
-
-
-/* Typography */
-
-* {
-	font-weight: 400;
-	border: 2px dashed pink;
+*, header, footer {
 }
 
 h1, h2, h3, h4, h5, h6 {
 	color: var(--h-color);
 }
 
+p {
+    color: var(--p-color);
+}
+
+.row-gradient {
+	background: linear-gradient(135deg, var(--first-gradient-color) 30%, var(--second-gradient-color));
+}
+
+.row-gradient-inverted {
+	background: linear-gradient(45deg, var(--second-gradient-color) -10%, var(--first-gradient-color));
+}
+
+
+/* Typography */
+
+
+h1 {
+    font-size: 2.2em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-weight: 400;
+}
+
+h2 span, h3 span {
+    font-weight: 700;
+    color: var(--h-color);
+}
+
+p {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 2em;
+}
+
+.year {
+    font-weight: 600;
+}
+
 /* Box model */
 
+
 .row {
-	min-height: 30vh;
+	min-height: 40vh;
+    width: 100%;
 }
 
 .row-fullheight {
 	min-height: 100vh;
 }
 
-.row-gradient {
-	background: linear-gradient(135deg, var(--first-gradient-color) 30%, var(--second-gradient-color));
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3em 1em;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.column {
+    width: 50%;
+}
+
+.toc {
+    text-align: center;
+}
+
+footer {
+    background: linear-gradient(45deg, var(--first-gradient-color) 20%, var(--second-gradient-color));
 }
