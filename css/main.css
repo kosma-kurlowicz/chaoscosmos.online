@@ -37,7 +37,7 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, button, p, blockquote, pre, a, ab
     outline: none;
 
     /* inherit the color value of the parent */
-	color: var(--p-color);
+	color: var(--h-color);
 }
 
 ol, ul {
@@ -81,15 +81,8 @@ svg {
 
 /* Colors */
 
-*, header, footer {
-}
-
 h1, h2, h3, h4, h5, h6 {
 	color: var(--h-color);
-}
-
-p {
-    color: var(--p-color);
 }
 
 .row-gradient {
@@ -119,7 +112,7 @@ h3 {
 }
 
 h2 span, h3 span {
-    font-weight: 700;
+    font-weight: 600;
     color: var(--h-color);
 }
 
@@ -129,15 +122,139 @@ p {
     margin-bottom: 2em;
 }
 
+p span {
+    font-weight: 700;
+}
+
+#baner-fearless p {
+    font-size: 2.4em;
+    color: var(--h-color);
+}
+
+#baner-fearless p span {
+    font-weight: 600;
+    color: var(--h-color);
+}
+
+#lets-talk .column p {
+    font-size: 2em;
+    font-weight: 400;
+    text-align: right;
+}
+
+#lets-talk .column p span {
+    font-weight: 600;
+}
+
+.section-slogan {
+    font-size: 2em;
+    font-weight: 600;
+    background: linear-gradient(33deg, var(--second-gradient-color) 30%, var(--first-gradient-color));
+    text-align: right;
+    padding: 12px;
+    width: initial;
+    align-self: flex-end;
+    margin: 1em 0;
+}
+
+.section-slogan a {
+    color: var(--h-color);
+    font-weight: 600;
+}
+
+.toc h2 {
+    margin-bottom: 2em;
+}
+
+.toc nav li {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: .6em;
+}
+
+.toc nav li a {
+    color: var(--h-color);
+}
+
+.toc nav a {
+    box-shadow: inset 0 0 0 0 var(--h-color);
+    padding: 8px;
+}
+
+.toc nav a:hover, .toc nav a:focus {
+    color:white;
+    box-shadow: inset 300px 0 0 0 var(--h-color);
+    transition-property: box-shadow, color;
+    transition-duration: 600ms;
+    transition-timing-function: cubic-bezier(.9, 0, 0, 1);
+}
+
 .year {
     font-weight: 600;
 }
 
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+footer nav {
+    margin-bottom: 3em;
+}
+
+footer nav:nth-child(3) {
+    margin-bottom: 0;
+}
+
+footer nav ul li {
+    font-size: 1.375em;
+    font-weight: 600;
+    text-align: right;
+    margin-bottom: .6em;
+}
+
+footer nav a, #company, #year {
+    color: var(--h-color);
+    padding: 6px;
+}
+
+footer nav a {
+    box-shadow: inset 0 0 0 0 var(--h-color);
+}
+
+footer nav a:hover, footer nav a:focus {
+    color:white;
+    box-shadow: inset 200px 0 0 0 var(--h-color);
+    transition-property: box-shadow, color;
+    transition-duration: 600ms;
+    transition-timing-function: cubic-bezier(.9, 0, 0, 1);
+}
+
+footer h2 span {
+    font-weight: 300;
+}
+
+#cc-logo-footer {
+}
+
+#year {
+    font-size: 1.4em;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+#company {
+    font-size: .8em;
+    margin-top: 1em;
+}
+
 /* Box model */
 
+p, h1, h2, h3, h4 {
+    border: 0px dashed black;
+}
 
 .row {
-	min-height: 40vh;
+	min-height: 66vh;
     width: 100%;
 }
 
@@ -145,21 +262,21 @@ p {
 	min-height: 100vh;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 3em 1em;
+#intro {
+    min-height: 140vh;
 }
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-row {
+#tilda-toc {
+    margin-top: -100px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 4em 2em;
 }
 
 .column {
@@ -172,4 +289,124 @@ p {
 
 footer {
     background: linear-gradient(45deg, var(--first-gradient-color) 20%, var(--second-gradient-color));
+}
+
+footer .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:initial;
+}
+
+.vertical-card {
+    max-width: 920px;
+    background-color: white;
+    -webkit-box-shadow: 15px 15px 0px 0px rgba(0,0,0, 0.3); 
+    box-shadow: 15px 15px 0px 0px rgba(0,0,0, 0.3);
+    margin-bottom: 2em;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.vertical-card:nth-child(2n) {
+    align-self: flex-end;
+}
+
+.clients-portrait {
+    background-color: whitesmoke;
+    height:400px;
+    width:240px;
+    flex-shrink: 0;
+}
+
+.clients-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+.clients-description p {
+    margin: 0;
+}
+
+#wcb {
+    margin: 3em auto;
+}
+
+#case-study {
+    background: linear-gradient(140deg, #e9fffd, #fff1c0);
+}
+
+#pricing {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0), #cef9ff), url(../png/background-left.png);
+    background-position: bottom left, bottom left;
+    background-repeat: no-repeat, no-repeat;
+}
+
+#about-us {
+    background: linear-gradient(15deg, #e9fffd, #fff1c0);
+}
+
+@media screen and (min-width:900px) {
+
+    #baner-fearless {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #services {
+    background-image: url(../png/background-left.png);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    }
+
+    #lets-talk, #principles {
+    background-image: url(../png/background-down.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    }
+
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    .align-left {
+        align-items: flex-start;
+    }
+
+    .align-right {
+        align-items: flex-end;
+    }
+    
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Animations */
+
+#rotating-point {
+    animation-timing-function: linear;
+    animation-duration: 6s;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
 }
