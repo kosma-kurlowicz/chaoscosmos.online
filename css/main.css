@@ -17,6 +17,10 @@ Source: https://github.com/GoesToEleven/html-css-bootcamp/blob/master/018_css-re
 
 */
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body, div, span, h1, h2, h3, h4, h5, h6, button, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, figure, figcaption, footer, header, nav, output, section, time, mark, audio, video, input, textarea, select {
     margin: 0;
     padding: 0;
@@ -38,6 +42,7 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, button, p, blockquote, pre, a, ab
 
     /* inherit the color value of the parent */
 	color: var(--h-color);
+    /*border: 1px dashed crimson;*/
 }
 
 ol, ul {
@@ -81,6 +86,7 @@ svg {
 
 /* Colors */
 
+
 h1, h2, h3, h4, h5, h6 {
 	color: var(--h-color);
 }
@@ -98,16 +104,16 @@ h1, h2, h3, h4, h5, h6 {
 
 
 h1 {
-    font-size: 2.2em;
+    font-size: 2rem;
 }
 
 h2 {
-    font-size: 2.4em;
+    font-size: 1.8rem;
 }
 
 h3 {
-    font-size: 2em;
-    margin-bottom: 1em;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
     font-weight: 400;
 }
 
@@ -117,7 +123,7 @@ h2 span, h3 span {
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 2em;
 }
@@ -138,7 +144,6 @@ p span {
 
 #lets-talk .column p {
     font-size: 2em;
-    font-weight: 400;
     text-align: right;
 }
 
@@ -149,7 +154,7 @@ p span {
 .section-slogan {
     font-size: 2em;
     font-weight: 600;
-    background: linear-gradient(33deg, var(--second-gradient-color) 30%, var(--first-gradient-color));
+    background: linear-gradient(33deg, var(--second-gradient-color) 10%, var(--first-gradient-color));
     text-align: right;
     padding: 12px;
     width: initial;
@@ -159,7 +164,16 @@ p span {
 
 .section-slogan a {
     color: var(--h-color);
+    background-color: none;
     font-weight: 600;
+    transition-property: background-color,color;
+    transition-duration: 600ms;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.section-slogan a:hover {
+    color: white;
+    background-color: var(--h-color);
 }
 
 .toc h2 {
@@ -177,16 +191,21 @@ p span {
 }
 
 .toc nav a {
-    box-shadow: inset 0 0 0 0 var(--h-color);
+    background-color: none;
     padding: 8px;
+    transition-property: background-color, color;
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 .toc nav a:hover, .toc nav a:focus {
     color:white;
-    box-shadow: inset 300px 0 0 0 var(--h-color);
-    transition-property: box-shadow, color;
-    transition-duration: 600ms;
-    transition-timing-function: cubic-bezier(.9, 0, 0, 1);
+    background-color: var(--h-color);
+}
+
+.plan-details-maintenance {
+    font-weight: 600;
+    text-align: center;
 }
 
 .year {
@@ -214,30 +233,40 @@ footer nav ul li {
 
 footer nav a, #company, #year {
     color: var(--h-color);
-    padding: 6px;
+    margin: 1rem 0 1rem 0;
 }
 
 footer nav a {
-    box-shadow: inset 0 0 0 0 var(--h-color);
+    background-color: none;
+    transition-property: background-color, color;
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 footer nav a:hover, footer nav a:focus {
     color:white;
-    box-shadow: inset 200px 0 0 0 var(--h-color);
-    transition-property: box-shadow, color;
-    transition-duration: 600ms;
-    transition-timing-function: cubic-bezier(.9, 0, 0, 1);
+    background-color: var(--h-color);
+}
+
+footer h2 {
+    font-size: 1.4rem;
 }
 
 footer h2 span {
     font-weight: 300;
 }
 
+#tilda-footer {
+    align-self: center;
+}
+
 #cc-logo-footer {
+    margin: 3rem 0;
+    align-self: center;
 }
 
 #year {
-    font-size: 1.4em;
+    font-size: 1rem;
     font-weight: 800;
     margin-bottom: 0;
 }
@@ -245,6 +274,30 @@ footer h2 span {
 #company {
     font-size: .8em;
     margin-top: 1em;
+}
+
+.plan-description {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.plan-price {
+    text-align: center;
+}
+
+.plan-price span {
+    font-size: 2rem;
+}
+
+.plan-elements {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0rem;
+}
+
+.plan-elements ~ ul {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* Box model */
@@ -266,16 +319,87 @@ p, h1, h2, h3, h4 {
     min-height: 140vh;
 }
 
+#intro .column {
+    max-height: 100vh;
+}
+
+#eye-container {
+    position: relative;
+    width: 560px;
+    height:360px;
+}
+
+#eye-ball {
+    z-index: 20;
+    position: absolute;
+    top: 66px;
+    animation-duration: 12s;
+    animation-name: moveeyehorizontal;
+    animation-iteration-count: infinite;
+}
+
+#eye-open {
+    filter: drop-shadow(.5rem 1rem 0.5rem rgba(83, 83, 83, 0.541));
+    animation-duration: 6s;
+    animation-name: rotateeye;
+    animation-iteration-count: infinite;
+    z-index: 30;
+    position: absolute;
+    top: 0;
+}
+
+#eye-iris {
+    filter: drop-shadow(.5rem 1rem 0.5rem rgba(83, 83, 83, 0.541));
+    animation-duration: 4s;
+    animation-name: rotateeye;
+    animation-iteration-count: infinite;
+    z-index: 21;
+    position: absolute;
+    top: 120px;
+    left: 180px;
+}
+
+#eye-center {
+    z-index: 22;
+    position: absolute;
+    top: 140px;
+    left: 210px;
+}
+
+@keyframes rotateeye {
+    from {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(12deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+  }
+
+@keyframes moveeyehorizontal {
+    from {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(2rem);
+    }
+    to {
+        transform: translateX(0);
+    }
+  }
+
 #tilda-toc {
-    margin-top: -100px;
+    margin-top: -50px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
 #asteriks {
-    margin-bottom: 0px;
-    padding-left: calc(100vw - 76vw);
+    margin-bottom: 4rem;
+    margin-left: -6rem;
 }
 
 #asteriks img {
@@ -285,15 +409,35 @@ p, h1, h2, h3, h4 {
 .container {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 4em 2em;
+    padding: 3rem 2rem 2rem 2rem;
 }
 
 .column {
-    width: 50%;
+    width: 100%;
+    padding-bottom: 4rem;
 }
 
 .toc {
     text-align: center;
+}
+
+#baner-fearless {
+    padding: 0 4rem;
+}
+
+#baner-fearless .column:nth-of-type(1) {
+    padding: 2rem 0;
+}
+
+#baner-fearless .column:nth-of-type(1) p {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#baner-fearless .column:nth-of-type(2) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 footer {
@@ -307,6 +451,11 @@ footer .column {
     width:initial;
 }
 
+footer .container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .vertical-card {
     max-width: 920px;
     background-color: white;
@@ -315,7 +464,7 @@ footer .column {
     margin-bottom: 2em;
     align-self: flex-start;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -323,10 +472,36 @@ footer .column {
     align-self: flex-end;
 }
 
+.horizontal-card {
+    background-color: white;
+    -webkit-box-shadow: 15px 15px 0px 0px rgba(0,0,0, 0.3); 
+    box-shadow: 15px 15px 0px 0px rgba(0,0,0, 0.3);
+    margin-bottom: 2em;
+    max-width: 340px;
+    min-width: 100px;
+}
+
+.horizontal-card h3 {
+    display: block;
+    width: 100%;
+    background: linear-gradient(45deg, #e9fffd 40%, #fff1c0);
+    text-align: center;
+    padding: 1rem;
+}
+
+.pricing-plan-card ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.pricing-plan-details {
+    padding: 0rem 2rem 1rem 2rem;
+}
+
 .clients-portrait {
-    background-color: whitesmoke;
-    height:400px;
-    width:260px;
+    background-color: rgb(194, 193, 193);
+    height:300px;
+    width:100%;
     flex-shrink: 0;
     overflow: hidden;
     display: flex;
@@ -338,11 +513,11 @@ footer .column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2em;
+    padding: 2rem 2rem 1rem 2rem;
 }
 
 .clients-description p {
-    margin: 0;
+    margin: 0 0 1rem 0;
 }
 
 .clients-description h3 {
@@ -363,11 +538,87 @@ footer .column {
     background-repeat: no-repeat, no-repeat;
 }
 
+#pricing .container .container {
+    padding: 2rem 0;
+}
+
 #about-us {
     background: linear-gradient(15deg, #e9fffd, #fff1c0);
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.align-right {
+    align-items: flex-end;
+}
+
+#services {
+    background-image: url(../png/background-left.png);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    }
+
+#lets-talk, #principles {
+    background-image: url(../png/background-down.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    }
+
 @media screen and (min-width:900px) {
+
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    h2 {
+        font-size: 2.4em;
+    }
+    
+    h3 {
+        font-size: 2em;
+        margin-bottom: 1em;
+        font-weight: 400;
+    }
+    
+    h2 span, h3 span {
+        font-weight: 600;
+    }
+    
+    p {
+        font-size: 1.2em;
+        font-weight: 400;
+        margin-bottom: 2em;
+    }
+    
+    p span {
+        font-weight: 700;
+    }
+
+    footer h2 {
+        font-size: 2.4rem;
+    }
+
+    #baner-fearless .column:nth-of-type(1) p {
+        text-align: left;
+    }
+
+    .row {
+        padding: 0 2rem 0 2rem;
+    }
+
+    .container {
+        padding: 4rem 2rem;
+    }
+
+    .column {
+        width: 50%;
+        padding-bottom: 0;
+    }
 
     #baner-fearless {
         display: flex;
@@ -376,43 +627,69 @@ footer .column {
         align-items: center;
     }
 
-    #services {
-    background-image: url(../png/background-left.png);
-    background-position: bottom left;
-    background-repeat: no-repeat;
+    #pricing .flex-row {
+        justify-content: center;
     }
 
-    #lets-talk, #principles {
-    background-image: url(../png/background-down.png);
-    background-position: bottom right;
-    background-repeat: no-repeat;
+    #pricing .horizontal-card {
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
-    .flex-column {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
+    .plan-description {
+        min-height: 6rem;
+    }
+
+    .plan-details-visual {
+        min-height: 14rem;
     }
     
+    .plan-details-languages {
+        min-height: 8rem;
+    }
+    
+    .plan-details-includes {
+        min-height: 22rem;
+    }
+        
     .align-left {
         align-items: flex-start;
-    }
-
-    .align-right {
-        align-items: flex-end;
     }
     
     .flex-row {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    footer .container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #asteriks {
+        margin-bottom: 0;
+        margin-left: -20rem;
+        padding-left: calc(100vw - 76vw);
+    }
+
+    #tilda-toc {
+        margin-top: -100px;
+    }
+
+    #tilda-footer {
+        display: none;
+    }
+
+    #cc-logo-footer {
+        align-self: flex-start;
     }
 }
 
 /* Animations */
 
-#rotating-point {
+#rotating-point {<img src="webp/ewa-ruminska.webp" alt="">
     animation-timing-function: linear;
     animation-duration: 6s;
     animation-name: rotate;
@@ -446,5 +723,47 @@ footer .column {
 
     to {
         transform: rotate(-360deg)
+    }
+}
+
+.illustration {
+    margin: 0 auto;
+}
+
+#justyna-janik {
+    background-image: url(../webp/justyna-janik.webp);
+}
+
+#anna-alboth {
+    background-image: url(../webp/anna-alboth.webp);
+}
+
+#ewa-ruminska {
+    background-image: url(../webp/ewa-ruminska.webp);
+}
+
+#malwina-jachimczak {
+    background-image: url(../webp/malwina-zygmunt-chaoscosmos.webp);
+}
+
+#kosma-kurlowicz {
+    background-image: url(../webp/kosma-kurlowicz-chaoscosmos.webp);
+}
+
+.clients-portrait {
+    background-size: cover;
+    background-position: top center;
+}
+
+@media screen and (min-width:700px) {
+    .vertical-card {
+        flex-direction: row;
+    }
+
+    .clients-portrait {
+        min-height:400px;
+        width:260px;
+        background-size: cover;
+        background-position: center center;
     }
 }
