@@ -355,7 +355,6 @@ p, h1, h2, h3, h4 {
 }
 
 #eye-ball {
-    z-index: 20;
     position: absolute;
     top: 66px;
     left: 0px;
@@ -373,7 +372,6 @@ p, h1, h2, h3, h4 {
 }
 
 #eye-center {
-    z-index: 22;
     top: 160px;
     position: absolute;
     left: 226px;
