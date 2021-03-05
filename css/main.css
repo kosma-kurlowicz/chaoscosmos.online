@@ -19,6 +19,7 @@ Source: https://github.com/GoesToEleven/html-css-bootcamp/blob/master/018_css-re
 
 html {
     scroll-behavior: smooth;
+    background-color: white;
 }
 
 html, body, div, span, h1, h2, h3, h4, h5, h6, button, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, figure, figcaption, footer, header, nav, output, section, time, mark, audio, video, input, textarea, select {
@@ -132,6 +133,18 @@ p span {
     font-weight: 700;
 }
 
+.intro h1 {
+    text-align: center;
+    padding-bottom: 6rem;
+    font-weight: 300;
+}
+
+.toc {
+    text-align: center;
+    background-image: url(../png/background-noise-w150.png);
+    background-repeat: repeat;
+}
+
 #baner-fearless p {
     font-size: 2.4em;
     color: var(--h-color);
@@ -151,7 +164,7 @@ p span {
     font-weight: 600;
 }
 
-.section-slogan {
+.sect-slogan {
     font-size: 2em;
     font-weight: 600;
     background: linear-gradient(33deg, var(--second-gradient-color) 10%, var(--first-gradient-color));
@@ -162,7 +175,7 @@ p span {
     margin: 1em 0;
 }
 
-.section-slogan a {
+.sect-slogan a {
     color: var(--h-color);
     background-color: none;
     font-weight: 600;
@@ -171,7 +184,7 @@ p span {
     transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.section-slogan a:hover {
+.sect-slogan a:hover {
     color: white;
     background-color: var(--h-color);
 }
@@ -315,24 +328,37 @@ p, h1, h2, h3, h4 {
 	min-height: 100vh;
 }
 
-#intro {
-    min-height: 140vh;
+.intro {
+    min-height: 100vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
-#intro .column {
-    max-height: 100vh;
+.header-logo {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
 }
 
 #eye-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 550px;
+    margin:0rem auto 4rem auto;
     position: relative;
-    width: 560px;
-    height:360px;
 }
 
 #eye-ball {
     z-index: 20;
     position: absolute;
     top: 66px;
+    left: 0px;
     animation-duration: 12s;
     animation-name: moveeyehorizontal;
     animation-iteration-count: infinite;
@@ -344,26 +370,25 @@ p, h1, h2, h3, h4 {
     animation-name: rotateeye;
     animation-iteration-count: infinite;
     z-index: 30;
-    position: absolute;
-    top: 0;
-}
-
-#eye-iris {
-    filter: drop-shadow(.5rem 1rem 0.5rem rgba(83, 83, 83, 0.541));
-    animation-duration: 4s;
-    animation-name: rotateeye;
-    animation-iteration-count: infinite;
-    z-index: 21;
-    position: absolute;
-    top: 120px;
-    left: 180px;
 }
 
 #eye-center {
     z-index: 22;
+    top: 160px;
     position: absolute;
-    top: 140px;
-    left: 210px;
+    left: 226px;
+}
+
+@media screen and (max-width:600px) {
+    #eye-center {
+        top: 78px;
+        left: 110px;
+    }
+
+    #eye-ball {
+        top: 36px;
+        left: 0px;
+    }
 }
 
 @keyframes rotateeye {
@@ -391,7 +416,7 @@ p, h1, h2, h3, h4 {
   }
 
 #tilda-toc {
-    margin-top: -50px;
+    padding-top: 3rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -406,6 +431,18 @@ p, h1, h2, h3, h4 {
     margin-bottom: -160px;
 }
 
+#asteriks-toc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url(../png/background-noise-w150.png);
+}
+
+#asteriks-toc img {
+    margin-top: -80px;
+    margin-right: -12vw;
+}
+
 .container {
     max-width: 1300px;
     margin: 0 auto;
@@ -415,10 +452,6 @@ p, h1, h2, h3, h4 {
 .column {
     width: 100%;
     padding-bottom: 4rem;
-}
-
-.toc {
-    text-align: center;
 }
 
 #baner-fearless {
@@ -494,6 +527,10 @@ footer .container {
     list-style-position: inside;
 }
 
+.pricing-plan-card.maintenance-card {
+    max-width: 560px;
+} 
+
 .pricing-plan-details {
     padding: 0rem 2rem 1rem 2rem;
 }
@@ -501,7 +538,6 @@ footer .container {
 .clients-portrait {
     background-color: rgb(194, 193, 193);
     height:300px;
-    width:100%;
     flex-shrink: 0;
     overflow: hidden;
     display: flex;
@@ -518,6 +554,7 @@ footer .container {
 
 .clients-description p {
     margin: 0 0 1rem 0;
+    font-size: 1.1rem;
 }
 
 .clients-description h3 {
@@ -551,6 +588,10 @@ footer .container {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+}
+
+#testok {
+    border:2px solid pink;
 }
 
 .align-right {
@@ -651,6 +692,11 @@ footer .container {
     .plan-details-includes {
         min-height: 22rem;
     }
+
+    .maintenance-card .plan-details-includes{
+        min-height: 2rem;
+        text-align: justify;
+    }
         
     .align-left {
         align-items: flex-start;
@@ -696,7 +742,7 @@ footer .container {
     animation-iteration-count: infinite;
 }
 
-#asteriks img {
+#asteriks img, #asteriks-toc img  {
     animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
     animation-duration: 4s;
     animation-name: rotate-asteriks;
@@ -734,8 +780,8 @@ footer .container {
     background-image: url(../webp/justyna-janik.webp);
 }
 
-#anna-alboth {
-    background-image: url(../webp/anna-alboth.webp);
+#anita-deskiewicz {
+    background-image: url(../webp/anita-deskiewicz.webp);
 }
 
 #ewa-ruminska {
@@ -750,6 +796,26 @@ footer .container {
     background-image: url(../webp/kosma-kurlowicz-chaoscosmos.webp);
 }
 
+#column-case {
+    width: 220px;
+    height:100%;
+    margin: 0 auto;
+}
+
+@media screen and (min-width:1060px) {
+#column-case {
+    width: 360px;
+}
+}
+
+#image-case-study {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+    -webkit-box-shadow: 15px 15px 0px 0px rgba(0,0,0, 0.3); 
+    box-shadow: 15px 15px 0px 0px rgba(0,0,0, 0.3);
+}
+
 .clients-portrait {
     background-size: cover;
     background-position: top center;
@@ -762,7 +828,7 @@ footer .container {
 
     .clients-portrait {
         min-height:400px;
-        width:260px;
+        width:200px;
         background-size: cover;
         background-position: center center;
     }
