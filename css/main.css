@@ -116,6 +116,8 @@ h3 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
     font-weight: 400;
+    text-align: left;
+    width:100%;
 }
 
 h2 span, h3 span {
@@ -314,10 +316,6 @@ footer h2 span {
 }
 
 /* Box model */
-
-p, h1, h2, h3, h4 {
-    border: 0px dashed black;
-}
 
 .row {
 	min-height: 66vh;
