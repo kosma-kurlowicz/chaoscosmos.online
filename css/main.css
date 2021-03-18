@@ -192,7 +192,7 @@ p span {
 }
 
 .toc h2 {
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 
 .toc nav li {
@@ -216,6 +216,21 @@ p span {
 .toc nav a:hover, .toc nav a:focus {
     color:white;
     background-color: var(--h-color);
+}
+
+.language-menu {
+    margin-bottom: 3rem;;
+}
+
+.language-menu ul li  {
+    display: inline-block;
+    padding: 5px;
+}
+
+.language-menu .language-active {
+    color:white;
+    background-color: var(--h-color);
+    padding:5px;
 }
 
 .plan-details-maintenance {
