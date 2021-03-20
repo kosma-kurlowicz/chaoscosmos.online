@@ -5,4 +5,4 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin"
-    Content-Security-Policy-Report-Only = "default-src https://chaoscosmos.pl 'unsafe-inline' 'unsafe-eval', report-uri: https://report.chaoscosmos.pl"
+    Content-Security-Policy-Report-Only = "default-src https: 'unsafe-inline' 'unsafe-eval'; report-uri: https://report.chaoscosmos.pl"
